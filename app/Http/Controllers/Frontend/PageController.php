@@ -9,16 +9,17 @@ class PageController extends Controller
 {
 
     public function urunler(){
-
         return view('frontend.pages.products');
     }
 
     public function urundetay(){
         return view('frontend.pages.product');
     }
+    public function indirimdekiurunler(){
+        return view('frontend.pages.products');
+    }
 
     public function hakkimizda(){
-
         return view('frontend.pages.about');
     }
 
