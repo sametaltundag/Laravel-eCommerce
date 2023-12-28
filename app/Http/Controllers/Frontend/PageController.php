@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -20,7 +22,9 @@ class PageController extends Controller
     }
 
     public function hakkimizda(){
-        return view('frontend.pages.about');
+        $abouts = About::where('id',1)->first();
+        $categories = Category::where('status', '1')->get();
+        return view('frontend.pages.about',compact('abouts','categories'));
     }
 
     public function iletisim(){

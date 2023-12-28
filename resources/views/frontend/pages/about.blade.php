@@ -10,7 +10,7 @@ Hakkımızda
 <div class="bg-light py-3">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">About</strong></div>
+        <div class="col-md-12 mb-0"><a href="{{route('anasayfa')}}">Anasayfa</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Hakkımızda</strong></div>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@ Hakkımızda
         <div class="col-md-6">
           <div class="block-16">
             <figure>
-              <img src="images/blog_1.jpg" alt="Image placeholder" class="img-fluid rounded">
+              <img src="{{$abouts->image ?? 'images/blog_1.jpg'}}" alt="Image placeholder" class="img-fluid rounded">
               <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="ion-md-play"></span></a>
 
             </figure>
@@ -32,10 +32,9 @@ Hakkımızda
 
 
           <div class="site-section-heading pt-3 mb-4">
-            <h2 class="text-black">How We Started</h2>
+            <h2 class="text-black">{{$abouts->title}}</h2>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius repellat, dicta at laboriosam, nemo exercitationem itaque eveniet architecto cumque, deleniti commodi molestias repellendus quos sequi hic fugiat asperiores illum. Atque, in, fuga excepturi corrupti error corporis aliquam unde nostrum quas.</p>
-          <p>Accusantium dolor ratione maiores est deleniti nihil? Dignissimos est, sunt nulla illum autem in, quibusdam cumque recusandae, laudantium minima repellendus.</p>
+          <p>{!!$abouts->content !!}</p>
 
         </div>
       </div>
@@ -120,8 +119,8 @@ Hakkımızda
             <span class="icon-truck"></span>
           </div>
           <div class="text">
-            <h2 class="text-uppercase">Free Shipping</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+            <h2 class="text-uppercase">{{$abouts->text1}}</h2>
+            <p>{{$abouts->text1_text}}</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
@@ -129,8 +128,8 @@ Hakkımızda
             <span class="icon-refresh2"></span>
           </div>
           <div class="text">
-            <h2 class="text-uppercase">Free Returns</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+            <h2 class="text-uppercase">{{$abouts->text2}}</h2>
+            <p>{{$abouts->text2_text}}</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
@@ -138,8 +137,8 @@ Hakkımızda
             <span class="icon-help"></span>
           </div>
           <div class="text">
-            <h2 class="text-uppercase">Customer Support</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+            <h2 class="text-uppercase">{{$abouts->text3}}</h2>
+            <p>{{$abouts->text2_text}}</p>
           </div>
         </div>
       </div>

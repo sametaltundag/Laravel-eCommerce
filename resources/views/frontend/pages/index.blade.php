@@ -27,8 +27,8 @@
             <span class="icon-truck"></span>
           </div>
           <div class="text">
-            <h2 class="text-uppercase">Hızlı Kargo</h2>
-            <p>Ürünlerinizi 2-5 iş günü içinde hızlı ve güvenli şekilde teslim alabilirsiniz.</p>
+            <h2 class="text-uppercase">{{$abouts->text1}}</h2>
+            <p>{{$abouts->text1_text}}</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
@@ -36,8 +36,8 @@
             <span class="icon-refresh2"></span>
           </div>
           <div class="text">
-            <h2 class="text-uppercase">Ücretsiz İade</h2>
-            <p>Ürunlerinizi belli koşullar içerisinde ücretsiz olarak iade edebilirsiniz.</p>
+            <h2 class="text-uppercase">{{$abouts->text2}}</h2>
+            <p>{{$abouts->text2_text}}</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
@@ -45,8 +45,8 @@
             <span class="icon-help"></span>
           </div>
           <div class="text">
-            <h2 class="text-uppercase">Müşteri Desteği</h2>
-            <p> 7/24 güvenle müşteri hizmetleri ve WhatsApp kanalı ile destek alabilirsiniz.</p>
+            <h2 class="text-uppercase">{{$abouts->tex3}}</h2>
+            <p>{{$abouts->text3_text}}</p>
           </div>
         </div>
       </div>
