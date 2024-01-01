@@ -44,7 +44,7 @@
                 <li class="has-children">
                     <a href="#">Kategori</a>
                     <ul class="dropdown">
-                        @forelse ($categories->where('cat_ust', null) as $category)
+                        {{-- @forelse ($categories->where('cat_ust', null) as $category)
                             <li class="has-children">
                                 <a href="#">{{ $category->name }}</a>
                                 <ul class="dropdown">
@@ -55,7 +55,7 @@
                             </li>
                         @empty
                             <!-- Kategori bulunamadıysa yapılacak işlemler -->
-                        @endforelse
+                        @endforelse --}}
                     </ul>
                 </li>
                 <li><a href="{{ route('hakkimizda') }}">Hakkımızda</a></li>

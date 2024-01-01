@@ -23,8 +23,7 @@ class PageController extends Controller
 
     public function hakkimizda(){
         $abouts = About::where('id',1)->first();
-        $categories = Category::where('status', '1')->get();
-        return view('frontend.pages.about',compact('abouts','categories'));
+        return view('frontend.pages.about',compact('abouts'));
     }
 
     public function iletisim(){

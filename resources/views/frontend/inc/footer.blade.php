@@ -20,9 +20,9 @@
           <div class="block-5 mb-5">
             <h3 class="footer-heading mb-4">İletişim Bilgileri</h3>
             <ul class="list-unstyled">
-              <li class="address">Laravel Cd. PHP Bulvarı. Şanlıurfa/Türkiye</li>
-              <li class="phone"><a href="tel://02120000000">0212 000 00 00</a></li>
-              <li class="email"><a href="mailto:smtaltundag63@gmail.com">smtaltundag63@gmail.com</a></li>
+              <li class="address">{{$settings['address']}}</li>
+              <li class="phone"><a href="tel://{{$settings['phone']}}">{{$settings['phone']}}</a></li>
+              <li class="email"><a href="mailto:{{$settings['email']}}">{{$settings['email']}}</a></li>
             </ul>
           </div>
         </div>
