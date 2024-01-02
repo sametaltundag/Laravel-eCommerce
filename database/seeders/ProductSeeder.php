@@ -28,7 +28,7 @@ class ProductSeeder extends Seeder
 
         Product::create([
             'name' => 'Ürün 2',
-            'image' => 'cloth_1.jpg',
+            'image' => 'cloth_2.jpg',
             'content' => 'Ürün 2 içerik',
             'category_id' => 2,
             'short_text' => 'Kısa bilgi',

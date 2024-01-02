@@ -58,8 +58,11 @@ return [
      *
      *    'method' => array('Str','slug'),
      */
+    'method' => function($string,$sep){
+        return strtolower(str_replace(['ü', 'Ü', 'ö', 'Ö',' '], ['u', 'u', 'o', 'o','-'], $string));
+    },
 
-    'method' => null,
+    //'method' => null,
 
     /**
      * Separator to use when generating slugs.  Defaults to a hyphen.
@@ -87,7 +90,7 @@ return [
      * "similar" slugs.  The closure should return the new unique
      * suffix to append to the slug.
      */
-    
+
     'uniqueSuffix' => null,
 
     /**
@@ -146,7 +149,7 @@ return [
      * is probably not a good idea from an SEO point of view.
      * Only set this to true if you understand the possible consequences.
      */
-    
+
     'onUpdate' => false,
 
     /**
