@@ -20,7 +20,19 @@
           <h2 class="h3 mb-3 text-black">Bize form gönder</h2>
         </div>
         <div class="col-md-7">
+        @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+        @endif
 
+        @if (count($errors))
+        @foreach ($errors->all() as $error)
+        <div class="alert alert-danger">
+            {{ $error }}
+        </div>
+        @endforeach
+        @endif
           <form action="{{route('iletisim.kaydet')}}" method="post">
             @csrf
             <div class="p-3 p-lg-5 border">
@@ -59,18 +71,9 @@
         </div>
         <div class="col-md-5 ml-auto">
           <div class="p-4 border mb-3">
-            <span class="d-block text-primary h6 text-uppercase">New York</span>
-            <p class="mb-0">203 Fake St. Mountain View, San Francisco, California, USA</p>
+            <span class="d-block text-primary h6 text-uppercase">Adres</span>
+            <p class="mb-0">{{$settings['address']}}</p>
           </div>
-          <div class="p-4 border mb-3">
-            <span class="d-block text-primary h6 text-uppercase">London</span>
-            <p class="mb-0">203 Fake St. Mountain View, San Francisco, California, USA</p>
-          </div>
-          <div class="p-4 border mb-3">
-            <span class="d-block text-primary h6 text-uppercase">Canada</span>
-            <p class="mb-0">203 Fake St. Mountain View, San Francisco, California, USA</p>
-          </div>
-
         </div>
       </div>
     </div>

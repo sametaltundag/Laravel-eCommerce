@@ -15,6 +15,5 @@ class Contact extends Model
         'message',
         'status',
         'ip',
-        '_token'
     ];
 }
