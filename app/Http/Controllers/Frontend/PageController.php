@@ -11,9 +11,37 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
 
-    public function urunler(){
-        $products = Product::where('status','1')->paginate(1);
-        return view('frontend.pages.products', compact('products'));
+    public function urunler(Request $request){
+        $size = $request->size;
+        $color = $request->color;
+        $startprice = $request->startprice ?? null;
+        $endprice = $request->endprice ?? null;
+
+        $products = Product::where('status','1')
+        ->where(function($query) use($size,$color,$startprice,$endprice){
+            if(!empty($size)){
+                $query->where('size',$size);
+            }
+            if(!empty($color)){
+                $query->where('color',$color);
+            }
+            if(isset($startprice) && isset($endprice)){
+                $query->whereBetween('price',[$startprice,$endprice]);
+            }
+            return $query;
+        })
+        ->with('category:id,name,slug');
+
+        $minprice = $products->min('price');
+        $maxprice = $products->max('price');
+
+        $sizelist = Product::where('status','1')->groupBy('size')->pluck('size')->toArray();
+        $colorlist = Product::where('status','1')->groupBy('color')->pluck('color')->toArray();
+
+        $products = $products->paginate(12);
+        $categories = Category::where(['status'=>'1','cat_ust' => null])->withCount('items')->get();
+
+        return view('frontend.pages.products', compact('products','categories','minprice','maxprice','sizelist','colorlist'));
     }
 
     public function urundetay($slug){

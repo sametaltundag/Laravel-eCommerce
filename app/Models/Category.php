@@ -20,6 +20,10 @@ class Category extends Model
         'thumbnail',
     ];
 
+    public function items(){
+        return $this->hasMany(Product::class, 'category_id', 'id');
+    }
+
     public function sluggable(): array
     {
         return [

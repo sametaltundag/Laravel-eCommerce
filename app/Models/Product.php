@@ -19,6 +19,10 @@ class Product extends Model
         'quantity',
     ];
 
+    public function category(){
+        return $this->hasOne(Category::class, 'id', 'category_id'); // 1. veri parametredeki tablo, 2. veri ('id') ise Product tablosuna ait sütunundur
+     }
+
     public function sluggable(): array
     {
         return [
